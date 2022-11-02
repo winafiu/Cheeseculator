@@ -48,7 +48,6 @@ export default function Home() {
         totalMarks: '',
       },
     ])
-    console.log(data)
   }
 
   function handleInput(e, index = null) {
