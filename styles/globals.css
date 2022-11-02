@@ -8,5 +8,9 @@ input {
   padding: 5px 10px;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 @layer components {
 }
