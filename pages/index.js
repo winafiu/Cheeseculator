@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import { useState } from 'react'
 
 export default function Home() {
+  const [name, setName] = useState('')
+
   return (
     <div>
       <Head>
@@ -9,8 +12,47 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container">
-        <h1>Hello Cheese!</h1>
+      <main className="container px-4 mx-auto flex flex-col justify-center items-center gap-[30px] max-w-[500px] mt-8">
+        <h1 className="font-bold text-3xl text-center">Cheeseculator 🧀️</h1>
+
+        <h2 className="text-xl">Score: 93 / 100 %</h2>
+
+        <div className="flex flex-col gap-[20px] w-full">
+          <div className="flex flex-col w-full">
+            <label htmlFor="name">Name (e.x. Quiz, Attendance)</label>
+            <input id="name" type="text" />
+          </div>
+
+          <div className="flex flex-col w-full">
+            <label htmlFor="count">Total count</label>
+            <input id="count" type="text" />
+          </div>
+
+          <div className="flex flex-col w-full">
+            <label htmlFor="percentage">Total percentage</label>
+            <input id="percentage" type="text" />
+          </div>
+
+          <div className="flex flex-col gap-4 w-full">
+            <div className="flex flex-col gap-1 w-full">
+              <h3>Marks</h3>
+
+              <div className="flex gap-1">
+                <input type="checkbox" id="checkbox" />
+                <label htmlFor="checkbox">Calculate individually</label>
+              </div>
+            </div>
+
+            <div className="flex gap-4 w-full">
+              <input type="text" placeholder="Your marks" className="w-full" />
+              <input type="text" placeholder="Total marks" className="w-full" />
+            </div>
+          </div>
+        </div>
+
+        <button className="border border-black px-4 py-1 bg-black text-white rounded">
+          Next
+        </button>
       </main>
     </div>
   )
